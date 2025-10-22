@@ -1,0 +1,8 @@
+cat << EOF > mapper.py
+cat << EOF > reducer.py
+
+chmod a+x mapper.py
+chmod a+x reducer.py
+
+echo "jack be nimble jack be quick" | ./mapper.py
+echo "jack be nimble jack be quick" | ./mapper.py | sort -k1,1 | ./reducer.py

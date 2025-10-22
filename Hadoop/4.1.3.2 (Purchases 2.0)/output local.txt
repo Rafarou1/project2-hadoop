@@ -1,0 +1,8 @@
+Cameras 379.6
+Children's Clothing     235.63
+Consumer Electronics    296.8
+Men's Clothing  461.23
+Music   66.08
+Pet Supplies    493.51
+Toys    239.26
+Women's Clothing        153.57

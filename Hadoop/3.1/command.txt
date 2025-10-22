@@ -1,0 +1,6 @@
+hadoop jar /usr/local/hadoop-2.7.2/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.2.jar wordcount /user/hduser/wordcount/input /user/hduser/wordcount/output
+
+hdfs dfs -ls /user/hduser/wordcount/output
+hdfs dfs -cat /user/hduser/wordcount/output/part-r-00000
+
+hdfs dfs -rm -r /user/hduser/wordcount/output

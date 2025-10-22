@@ -1,0 +1,6 @@
+echo "jack be nimble jack be quick" > input.txt
+
+cat input.txt
+
+hdfs dfs -copyFromLocal input.txt /user/hduser/wordcount/input/
+

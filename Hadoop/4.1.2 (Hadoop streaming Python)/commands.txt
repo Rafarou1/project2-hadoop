@@ -1,0 +1,8 @@
+hadoop jar /usr/local/hadoop-2.7.2/share/hadoop/tools/lib/hadoop-streaming-2.7.2.jar -mapper /mapper.py -reducer /reducer.py -input /user/hduser/wordcount/input -output /user/hduser/wordcount/output -file /mapper.py -file /reducer.py
+
+hdfs dfs -ls /user/hduser/wordcount/output
+hdfs dfs -cat /user/hduser/wordcount/output/* | head
+
+hdfs dfs -get /user/hduser/wordcount/output/part-00000 /root/python_results.txt
+
+docker cp admiring_carson:/root/python_results.txt C:\Users\rafae\Desktop\data\Hadoop\

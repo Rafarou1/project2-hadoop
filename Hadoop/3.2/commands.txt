@@ -1,0 +1,8 @@
+docker cp C:\Users\rafae\Desktop\data\Hadoop\mobydick.txt admiring_carson:/root/mobydick.txt
+
+hadoop jar /usr/local/hadoop-2.7.2/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.2.jar wordcount /user/hduser/wordcount/input/mobydick.txt /user/hduser/wordcount/output
+
+hdfs dfs -cat /user/hduser/wordcount/output/*
+hdfs dfs -get /user/hduser/wordcount/output/part-r-00000 /root/results.txt
+
+docker cp admiring_carson:/root/results.txt C:\Users\rafae\Desktop\data\Hadoop\3.2\

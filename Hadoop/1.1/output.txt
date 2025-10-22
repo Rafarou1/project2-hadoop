@@ -1,0 +1,6 @@
+Hadoop 2.7.2
+Subversion https://git-wip-us.apache.org/repos/asf/hadoop.git -r b165c4fe8a74265c792ce23f546c64604acf0e41
+Compiled by jenkins on 2016-01-26T00:08Z
+Compiled with protoc 2.5.0
+From source with checksum d0fda26633fa762bff87ec759ebe689c
+This command was run using /usr/local/hadoop-2.7.2/share/hadoop/common/hadoop-common-2.7.2.jar

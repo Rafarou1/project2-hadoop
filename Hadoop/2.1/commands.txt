@@ -1,0 +1,8 @@
+hdfs dfs -mkdir -p /user/purchases
+hdfs dfs -ls /user
+
+docker cp C:\Users\rafae\purchases.txt admiring_carson:/root/purchases.txt
+
+hdfs dfs -pur /root/purchases.txt /user/purchases/
+
+hdfs dfs -cat /user/purchases/purchases.txt | head

@@ -1,0 +1,9 @@
+docker --tls pull prasanthj/docker-hadoop
+
+docker --tls run -i -t prasanthj/docker-hadoop /ect/bootstrap.sh -bash
+
+export HADOOP_HOME=/usr/local/hadoop
+export HADOOP_PREFIX=$HADOOP_HOME
+export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+
+hadoop version

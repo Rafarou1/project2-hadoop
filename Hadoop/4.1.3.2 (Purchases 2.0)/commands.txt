@@ -1,0 +1,9 @@
+cp purchases-mapper.py purchases2-mapper.py
+cp purchases-reducer.py purchases2-reducer.py
+
+chmod a+x purchases2-mapper.py
+chmod a+x purchases2-reducer.py
+
+hadoop jar /usr/local/hadoop-2.7.2/share/hadoop/tools/lib/hadoop-streaming-2.7.2.jar -mapper /purchases2-mapper.py -reducer /purchases2-reducer.py -input /user/purchases/purchases.txt -output /user/purchases/purchases2_output -file /purchases2-mapper.py -file /purchases2-reducer.py
+
+hdfs dfs -cat /user/purchases/purchases2_output/part-00000

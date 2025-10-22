@@ -1,0 +1,4 @@
+be      2
+jack    2
+nimble  1
+quick   1

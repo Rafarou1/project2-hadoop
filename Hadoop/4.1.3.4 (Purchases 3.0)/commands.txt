@@ -1,0 +1,11 @@
+cp purchases-mapper.py total-mapper.py
+cp purchases-reducer.py total-reducer.py
+
+chmod a+x total-mapper.py total-reducer.py
+
+head -10 root/purchases.txt | ./total-mapper.py | sort | ./total-reducer.py
+
+hadoop jar /usr/local/hadoop-2.7.2/share/hadoop/tools/lib/hadoop-streaming-2.7.2.jar -mapper /total-mapper.py -reducer /total-reducer.py -input /user/purchases/purchas
+es.txt -output /user/purchases/total_output -file /total-mapper.py -file /total-reducer.py
+
+hdfs dfs -cat /user/purchases/total_output/part-00000

@@ -1,0 +1,10 @@
+cp purchases-mapper.py maxsale-mapper.py
+cp purchases-reducer.py maxsale-reducer.py
+
+chmod a+x max-mapper.py
+chmod a+x max-reducer.py
+
+hadoop jar /usr/local/hadoop-2.7.2/share/hadoop/tools/lib/hadoop-streaming-2.7.2.jar -mapper /max-mapper.py -reducer /max-reducer.py -input /user/purchases/purchases.t
+xt -output /user/purchases/max_output -file /max-mapper.py -file /max-reducer.py
+
+hdfs dfs -cat /user/purchases/max_output/part-00000

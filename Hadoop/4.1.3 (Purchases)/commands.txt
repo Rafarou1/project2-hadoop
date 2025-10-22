@@ -1,0 +1,11 @@
+cat << EOF > purchases-mapper.py
+cat << EOF > purchases-reducer.py
+
+chmod a+x purchases-mapper.py
+chmod a+x purchases-reducer.py
+
+head -10 root/purchases.txt | ./purchases-mapper.py | sort | ./purchases-reducer.py
+
+hadoop jar /usr/local/hadoop-2.7.2/share/hadoop/tools/lib/hadoop-streaming-2.7.2.jar -mapper /purchases-mapper.py -reducer /purchases-reducer.py -input /user/purchases/purchases.txt -output /user/purchases/output -file /purchases-mapper.py -file /purchases-reducer.py
+
+hdfs dfs -cat /user/purchases/output/part-00000
